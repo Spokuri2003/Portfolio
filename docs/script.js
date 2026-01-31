@@ -1,115 +1,69 @@
-// year
-document.getElementById("y").textContent = new Date().getFullYear();
+// Footer year
+document.getElementById("year").textContent = new Date().getFullYear();
 
-// --- Animated "stock market" background ---
-const canvas = document.getElementById("market");
+// Smooth reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (e.isIntersecting) e.target.classList.add("on");
+  }
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+// Canvas starfield (SpaceX vibe)
+const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
+let w, h, stars;
 
 function resize() {
-  const dpr = Math.max(1, window.devicePixelRatio || 1);
-  canvas.width = Math.floor(window.innerWidth * dpr);
-  canvas.height = Math.floor(window.innerHeight * dpr);
-  canvas.style.width = window.innerWidth + "px";
-  canvas.style.height = window.innerHeight + "px";
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const dpr = Math.min(2, window.devicePixelRatio || 1);
+  w = canvas.width = Math.floor(innerWidth * dpr);
+  h = canvas.height = Math.floor(innerHeight * dpr);
+  canvas.style.width = innerWidth + "px";
+  canvas.style.height = innerHeight + "px";
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.scale(dpr, dpr);
+
+  const count = Math.floor(Math.min(220, innerWidth * 0.20));
+  stars = Array.from({ length: count }, () => ({
+    x: Math.random() * innerWidth,
+    y: Math.random() * innerHeight,
+    z: 0.2 + Math.random() * 0.8,
+    r: 0.6 + Math.random() * 1.6
+  }));
 }
-window.addEventListener("resize", resize);
+window.addEventListener("resize", resize, { passive: true });
 resize();
 
-function randn() {
-  // quick-ish normal-ish random
-  let u = 1 - Math.random();
-  let v = 1 - Math.random();
-  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
-}
+let t = 0;
+function tick() {
+  t += 0.008;
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
 
-class Line {
-  constructor(color, speed, amp) {
-    this.color = color;
-    this.speed = speed;
-    this.amp = amp;
-    this.reset();
-  }
-  reset() {
-    this.x = -60;
-    this.y = window.innerHeight * (0.25 + Math.random() * 0.55);
-    this.points = [];
-    this.v = (Math.random() < 0.5 ? -1 : 1) * (0.7 + Math.random() * 0.9);
-    const step = 18;
-    const n = Math.ceil((window.innerWidth + 120) / step);
-    let yy = this.y;
-    for (let i = 0; i < n; i++) {
-      yy += randn() * this.amp;
-      this.points.push(yy);
-    }
-  }
-  tick(dt) {
-    this.x += this.speed * dt;
-    if (this.x > 60) {
-      this.x = -60;
-      // drift line up/down slowly
-      this.y += randn() * (this.amp * 2);
-    }
-  }
-  draw() {
-    const step = 18;
-    ctx.beginPath();
-    for (let i = 0; i < this.points.length; i++) {
-      const px = this.x + i * step;
-      const py = this.points[i];
-      if (i === 0) ctx.moveTo(px, py);
-      else ctx.lineTo(px, py);
-    }
-    ctx.strokeStyle = this.color;
-    ctx.lineWidth = 2;
-    ctx.globalAlpha = 0.65;
-    ctx.stroke();
-
-    // subtle glow
-    ctx.globalAlpha = 0.18;
-    ctx.lineWidth = 6;
-    ctx.stroke();
-    ctx.globalAlpha = 1;
-  }
-}
-
-const lines = [
-  new Line("rgba(37,99,235,1)", 20, 6),   // blue
-  new Line("rgba(34,197,94,1)", 26, 7),   // green
-  new Line("rgba(168,85,247,1)", 18, 5),  // purple
-];
-
-let last = performance.now();
-function frame(now) {
-  const dt = Math.min(0.05, (now - last) / 1000);
-  last = now;
-
-  // clear
-  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
-  // faint gradient wash
-  const g = ctx.createLinearGradient(0, 0, window.innerWidth, window.innerHeight);
-  g.addColorStop(0, "rgba(37,99,235,0.06)");
-  g.addColorStop(0.5, "rgba(34,197,94,0.04)");
-  g.addColorStop(1, "rgba(168,85,247,0.05)");
+  // Background wash
+  const g = ctx.createLinearGradient(0, 0, innerWidth, innerHeight);
+  g.addColorStop(0, "rgba(5,7,15,1)");
+  g.addColorStop(1, "rgba(2,3,8,1)");
   ctx.fillStyle = g;
-  ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+  ctx.fillRect(0, 0, innerWidth, innerHeight);
 
-  // draw lines
-  for (const L of lines) {
-    L.tick(dt);
-    L.draw();
-  }
+  // Stars
+  for (const s of stars) {
+    const drift = Math.sin(t * (0.8 + s.z)) * (0.25 + s.z);
+    s.y += (0.22 + s.z) * 0.6;
+    s.x += drift * 0.25;
+    if (s.y > innerHeight + 10) s.y = -10;
+    if (s.x > innerWidth + 10) s.x = -10;
+    if (s.x < -10) s.x = innerWidth + 10;
 
-  // tiny spark points like ticks
-  ctx.globalAlpha = 0.35;
-  for (let i = 0; i < 18; i++) {
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
-    ctx.fillRect(x, y, 1.2, 1.2);
+    ctx.globalAlpha = 0.35 + s.z * 0.55;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(234,240,255,1)";
+    ctx.fill();
   }
   ctx.globalAlpha = 1;
 
-  requestAnimationFrame(frame);
+  requestAnimationFrame(tick);
 }
-requestAnimationFrame(frame);
+tick();
