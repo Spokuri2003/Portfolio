@@ -8,18 +8,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const app = document.querySelector(".app");
 
   function showPage(id) {
-    pages.forEach(p => p.classList.remove("active"));
-    const target = document.getElementById(id);
-    if (target) target.classList.add("active");
+  pages.forEach(p => p.classList.remove("active"));
+  const target = document.getElementById(id);
+  if (target) target.classList.add("active");
 
-    // Scroll INSIDE the app container back to top
-    if (app) app.scrollTop = 0;
+  // ✅ Reset every possible scroll container (fixes "still scrolled down")
+  if (app) app.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  if (target) target.scrollIntoView({ block: "start", behavior: "auto" });
 
-    // Update hash
-    if (location.hash !== `#${id}`) {
-      history.pushState(null, "", `#${id}`);
-    }
+  // Update hash
+  if (location.hash !== `#${id}`) {
+    history.pushState(null, "", `#${id}`);
   }
+}
 
   function getInitialPage() {
     const hash = (location.hash || "#home").replace("#", "");
