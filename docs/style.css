@@ -1,17 +1,11 @@
-/* =========================
-   BASE (Cinematic + Clean)
-   ========================= */
-
 :root{
-  --bg: #070b12;
-  --bg2: #0b1020;
+  --bg: #05070d;
   --text: #e8ecf4;
-  --muted: rgba(232,236,244,0.70);
+  --muted: rgba(232,236,244,0.72);
   --line: rgba(255,255,255,0.10);
   --card: rgba(255,255,255,0.04);
   --card2: rgba(255,255,255,0.06);
   --accent: rgba(139,211,255,0.95);
-  --accent2: rgba(255,190,170,0.85);
   --radius: 18px;
 }
 
@@ -20,31 +14,26 @@ html, body{ height: 100%; }
 body{
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 800px at 20% 20%, var(--bg2), var(--bg));
+  background: var(--bg);
   color: var(--text);
   line-height: 1.55;
 }
 
-/* Links */
 a{ color: var(--accent); text-decoration: none; }
 a:hover{ text-decoration: underline; }
-
-/* Utility */
 .muted{ color: var(--muted); }
+
 .wrap{
   width: min(1040px, calc(100% - 40px));
   margin: 0 auto;
   padding: 28px 0 48px;
 }
 
-/* =========================
-   PAGE ROUTER (no scrolling)
-   ========================= */
-
+/* ===== Page-style navigation (no scrolling) ===== */
 .page { display: none; }
 .page.active { display: block; }
 
-/* Safety fallback so site never becomes blank */
+/* Safety fallback */
 #home { display: block; }
 
 .section.page{
@@ -52,18 +41,13 @@ a:hover{ text-decoration: underline; }
   padding-top: 34px;
 }
 
-.wrap { padding-bottom: 40px; }
-
 .nameFront{
   display: inline-block;
   font-weight: 800;
   letter-spacing: 0.02em;
 }
 
-/* =========================
-   HERO
-   ========================= */
-
+/* ===== HERO ===== */
 .hero{
   position: relative;
   min-height: 100vh;
@@ -81,13 +65,13 @@ a:hover{ text-decoration: underline; }
 
 .glow{
   position:absolute;
-  filter: blur(60px);
-  opacity: 0.55;
+  filter: blur(90px);
+  opacity: 0.22;
   transform: translateZ(0);
 }
-.glow.g1{ width: 420px; height: 420px; left: -120px; top: -120px; background: var(--accent); }
-.glow.g2{ width: 480px; height: 480px; right: -160px; top: 40px; background: var(--accent2); }
-.glow.g3{ width: 520px; height: 520px; left: 20%; bottom: -220px; background: rgba(120,160,255,0.55); }
+.glow.g1{ width: 420px; height: 420px; left: -140px; top: -140px; background: rgba(120,180,255,0.40); }
+.glow.g2{ width: 480px; height: 480px; right: -180px; top: 60px; background: rgba(255,255,255,0.10); }
+.glow.g3{ width: 520px; height: 520px; left: 22%; bottom: -240px; background: rgba(120,160,255,0.18); }
 
 .grain{
   pointer-events: none;
@@ -127,7 +111,7 @@ a:hover{ text-decoration: underline; }
 
 .navLinks{
   display:flex;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 .navLinks a{
@@ -156,17 +140,16 @@ a:hover{ text-decoration: underline; }
   font-weight: 600;
   font-size: 14px;
   transition: transform .15s ease, background .15s ease, border-color .15s ease;
-  user-select: none;
 }
 .btn:hover{ transform: translateY(-1px); text-decoration:none; }
 .btn.primary{
   background: rgba(139,211,255,0.16);
-  border-color: rgba(139,211,255,0.35);
+  border-color: rgba(139,211,255,0.40);
   color: var(--text);
 }
 .btn.primary:hover{
   background: rgba(139,211,255,0.22);
-  border-color: rgba(139,211,255,0.50);
+  border-color: rgba(139,211,255,0.55);
 }
 .btn.ghost{
   background: rgba(255,255,255,0.03);
@@ -181,7 +164,7 @@ a:hover{ text-decoration: underline; }
   z-index: 1;
   width: min(960px, calc(100% - 40px));
   margin: 0 auto;
-  padding-top: 84px;
+  padding-top: 90px;
   padding-bottom: 80px;
 }
 
@@ -201,22 +184,22 @@ a:hover{ text-decoration: underline; }
 }
 
 .subhead{
-  margin: 0 0 22px;
+  margin: 0 0 14px;
   color: var(--muted);
   font-size: 16px;
   max-width: 68ch;
 }
 
-.heroBtns{
-  display:flex;
-  gap: 12px;
-  flex-wrap: wrap;
+.quickLinks{
+  margin: 0;
+  font-size: 14px;
+}
+.sep{
+  margin: 0 8px;
+  opacity: 0.55;
 }
 
-/* =========================
-   SECTIONS
-   ========================= */
-
+/* ===== SECTIONS ===== */
 .section{
   padding: 10px 0 40px;
 }
@@ -228,7 +211,6 @@ a:hover{ text-decoration: underline; }
 }
 .sectionHead p{
   margin: 0 0 18px;
-  color: var(--muted);
 }
 
 .twoCol{
@@ -241,7 +223,7 @@ a:hover{ text-decoration: underline; }
   border: 1px solid var(--line);
   background: var(--card);
   border-radius: var(--radius);
-  padding: 16px 16px;
+  padding: 16px;
   backdrop-filter: blur(12px);
 }
 .panel h3{ margin: 0 0 6px; font-size: 16px; }
@@ -253,15 +235,11 @@ a:hover{ text-decoration: underline; }
 }
 .panel li{ margin: 6px 0; }
 
-/* =========================
-   PROJECT CARDS (Netflix-ish)
-   ========================= */
-
+/* ===== PROJECT CARDS ===== */
 .rowTitle{
   margin: 10px 0 10px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: var(--text);
 }
 
 .row{
@@ -281,7 +259,7 @@ a:hover{ text-decoration: underline; }
   transition: transform .18s ease, background .18s ease, border-color .18s ease;
 }
 .card:hover{
-  transform: translateY(-3px) scale(1.01);
+  transform: translateY(-3px);
   background: var(--card2);
   border-color: rgba(255,255,255,0.18);
   text-decoration:none;
@@ -303,7 +281,6 @@ a:hover{ text-decoration: underline; }
 }
 .badge{
   font-size: 12px;
-  color: var(--text);
   border: 1px solid rgba(139,211,255,0.30);
   background: rgba(139,211,255,0.12);
   padding: 4px 10px;
@@ -311,15 +288,9 @@ a:hover{ text-decoration: underline; }
 }
 .card h3{ margin: 0 0 6px; font-size: 16px; }
 .card p{ margin: 0 0 10px; color: var(--muted); }
-.meta{
-  font-size: 12px;
-  color: rgba(232,236,244,0.68);
-}
+.meta{ font-size: 12px; color: rgba(232,236,244,0.68); }
 
-/* =========================
-   SKILL CHIPS
-   ========================= */
-
+/* ===== SKILLS CHIPS ===== */
 .chips{
   display:flex;
   flex-wrap: wrap;
@@ -335,59 +306,50 @@ a:hover{ text-decoration: underline; }
   font-size: 13px;
 }
 
-/* =========================
-   CONTACT
-   ========================= */
-
-.contactGrid{
+/* ===== CONTACT FORM ===== */
+.contactForm{
   display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-}
-
-.contactCard{
-  display:flex;
-  align-items:center;
   gap: 12px;
-  border: 1px solid var(--line);
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 14px 16px;
-  text-decoration:none;
-  color: var(--text);
-  transition: transform .18s ease, background .18s ease, border-color .18s ease;
 }
-.contactCard:hover{
-  transform: translateY(-2px);
-  background: var(--card2);
-  border-color: rgba(255,255,255,0.18);
-  text-decoration:none;
-}
-.icon{ font-size: 20px; }
-.contactTitle{ font-weight: 700; }
-
-/* =========================
-   FOOTER
-   ========================= */
-
-.footer{
-  margin-top: 26px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  display:flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items:center;
-  justify-content: center;
+.contactForm label{
+  display:grid;
+  gap: 6px;
   color: var(--muted);
   font-size: 13px;
 }
-.dot{ opacity: 0.4; }
+.contactForm input,
+.contactForm textarea{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  outline: none;
+}
+.contactForm input:focus,
+.contactForm textarea:focus{
+  border-color: rgba(139,211,255,0.45);
+}
+.small{ font-size: 12px; }
 
-/* =========================
-   TIMELINE styles (your code)
-   ========================= */
+/* ===== PAGE FOOTER CONTACT STRIP ===== */
+.pageFooter{
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.pfRow{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--muted);
+}
 
+/* ===== TIMELINE ===== */
 .timeline{
   position: relative;
   margin-top: 18px;
@@ -448,9 +410,23 @@ a:hover{ text-decoration: underline; }
 .tMeta{ margin: 6px 0 0 0; font-size: 13px; }
 .tDesc{ margin: 10px 0 0 0; font-size: 14px; line-height: 1.5; }
 
+/* ===== FOOTER ===== */
+.footer{
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+.dot{ opacity: 0.4; }
+
 @media (max-width: 920px){
   .row{ grid-template-columns: 1fr; }
   .twoCol{ grid-template-columns: 1fr; }
-  .contactGrid{ grid-template-columns: 1fr; }
-  .navLinks{ display:none; } /* keeps nav clean on small screens */
+  .navLinks{ display:none; }
 }
