@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Year in footer
+  // Footer year
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Pages
+  // ===== OPTIONAL: your stars animation can go here =====
+  // If you already have a stars canvas script, paste it here.
+  // (Keeping it here ensures the canvas exists before code runs.)
+
+  // Pages router
   const pages = Array.from(document.querySelectorAll(".page"));
   const navLinks = Array.from(document.querySelectorAll("[data-page]"));
 
@@ -17,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       history.pushState(null, "", `#${id}`);
     }
 
-    // Accessibility: move focus to page
+    // Accessibility focus (safe)
     if (target) {
       target.setAttribute("tabindex", "-1");
       try { target.focus({ preventScroll: true }); } catch (e) {}
