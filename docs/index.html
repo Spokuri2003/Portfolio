@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Swathi Pokuri | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <!-- HOME / HERO PAGE -->
+  <!-- ===================== HOME / HERO ===================== -->
   <header class="hero page active" id="home" aria-label="Home">
     <canvas id="stars" aria-hidden="true"></canvas>
 
-    <!-- Warm glow blobs -->
+    <!-- Subtle glow blobs -->
     <div class="glow g1" aria-hidden="true"></div>
     <div class="glow g2" aria-hidden="true"></div>
     <div class="glow g3" aria-hidden="true"></div>
@@ -31,7 +31,7 @@
       </div>
 
       <div class="navCtas">
-        <a class="btn ghost" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a class="btn ghost" href="./Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">Resume</a>
         <a class="btn primary" href="#projects" data-page="projects">Enter</a>
       </div>
     </nav>
@@ -39,29 +39,30 @@
     <div class="heroInner">
       <p class="kicker">Data Science • Analytics • Time Series • SQL • Governance</p>
 
-      <!-- ✅ Name on front page -->
       <h1 class="headline">
         <span class="nameFront">Swathi Pokuri</span><br/>
-        Turn messy data<br/>
-        into trusted decisions.
+        Data → clarity → outcomes.
       </h1>
 
       <p class="subhead">
-        I build analytics-ready datasets, KPI systems, forecasting/ML workflows, and dashboards —
-        with strong data quality, documentation, and stakeholder clarity.
+        Analytics and ML that are clean, governed, and ready to ship.
       </p>
 
-      <div class="heroBtns">
-        <a class="btn primary" href="#projects" data-page="projects">View Projects</a>
-        <a class="btn ghost" href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
+      <p class="quickLinks muted">
+        <a href="./Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <span class="sep">•</span>
+        <a href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">GitHub</a>
+        <span class="sep">•</span>
+        <a href="https://linkedin.com/in/swathi-pokuri-b841b269" target="_blank" rel="noreferrer">LinkedIn</a>
+        <span class="sep">•</span>
+        <a href="#contact" data-page="contact">Message</a>
+      </p>
     </div>
 
     <div class="grain" aria-hidden="true"></div>
   </header>
 
   <main class="wrap">
-
     <!-- ===================== TIMELINE ===================== -->
     <section id="timeline" class="section page" aria-label="Timeline">
       <div class="sectionHead">
@@ -104,10 +105,20 @@
           <div class="tDot" aria-hidden="true"></div>
           <div class="tCard">
             <div class="tTop"><span class="tYear">2022</span><span class="tTag">Internship</span></div>
-            <h3 class="tTitle">Machine Learning Intern (IoT & Time-Series)</h3>
+            <h3 class="tTitle">ML Intern (IoT & Time-Series)</h3>
             <p class="tMeta muted">NSIC • Hyderabad, India • Sep 2022 – Dec 2022</p>
             <p class="tDesc">IoT pipelines, anomaly detection, monitoring, predictive maintenance support.</p>
           </div>
+        </div>
+      </div>
+
+      <div class="pageFooter">
+        <div class="pfRow">
+          <span class="muted">Email:</span> <a href="mailto:swathicac1@gmail.com">swathicac1@gmail.com</a>
+          <span class="sep">•</span>
+          <span class="muted">LinkedIn:</span> <a href="https://linkedin.com/in/swathi-pokuri-b841b269" target="_blank" rel="noreferrer">linkedin.com/in/swathi-pokuri</a>
+          <span class="sep">•</span>
+          <span class="muted">GitHub:</span> <a href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">github.com/Spokuri2003</a>
         </div>
       </div>
     </section>
@@ -115,32 +126,32 @@
     <!-- ===================== EXPERIENCE ===================== -->
     <section id="experience" class="section page" aria-label="Experience">
       <div class="sectionHead">
-        <h2>Work Experience</h2>
-        <p class="muted">Roles focused on analytics delivery, data quality, and time-series/ML systems.</p>
+        <h2>Experience</h2>
+        <p class="muted">Analytics delivery, data quality, governance, and time-series workflows.</p>
       </div>
 
       <div class="twoCol">
         <div class="panel">
           <h3>Stevens Institute of Technology</h3>
-          <p class="muted">Research Assistant (Time-Series Analysis) • Hoboken, NJ • Jan 2025 – Dec 2025</p>
+          <p class="muted">Research Assistant (Time-Series) • Jan 2025 – Dec 2025</p>
           <ul>
-            <li>Performed time-series modeling and statistical analysis on research datasets.</li>
-            <li>Cleaned, validated, and preprocessed data to ensure accuracy and reproducibility.</li>
-            <li>Designed and evaluated forecasting models for research applications.</li>
-            <li>Documented methodologies, assumptions, and data definitions for transparency.</li>
-            <li>Managed structured datasets with controlled access to support collaborative workflows.</li>
+            <li>Time-series modeling and statistical analysis on research datasets.</li>
+            <li>Validated and preprocessed data for accuracy and reproducibility.</li>
+            <li>Designed and evaluated forecasting models for research use cases.</li>
+            <li>Documented assumptions, definitions, and methods for transparency.</li>
+            <li>Maintained structured datasets with controlled access for collaboration.</li>
           </ul>
         </div>
 
         <div class="panel">
           <h3>Datum Cybertech Pvt. Ltd. (Alithya Partner)</h3>
-          <p class="muted">Data Analyst Intern (BI & Analytics) • Hyderabad, India • Feb 2024 – May 2024</p>
+          <p class="muted">Data Analyst Intern (BI & Analytics) • Feb 2024 – May 2024</p>
           <ul>
-            <li>Developed SQL-based analytical models and KPI systems for reporting and decision support.</li>
-            <li>Built data pipelines and DAX models to analyze trends and anomalies in large datasets.</li>
-            <li>Designed 25+ dashboards to monitor business and operational metrics.</li>
-            <li>Cleaned and validated 100k+ records to improve data quality and reliability.</li>
-            <li>Ensured data quality, documentation, and governance standards across datasets.</li>
+            <li>Built SQL analytical models and KPI systems for reporting and decision support.</li>
+            <li>Created DAX models and pipelines to surface trends and anomalies.</li>
+            <li>Designed 25+ dashboards used to monitor operational performance.</li>
+            <li>Cleaned/validated 100k+ records to improve data quality and trust.</li>
+            <li>Applied documentation and governance habits across datasets.</li>
           </ul>
         </div>
       </div>
@@ -148,23 +159,33 @@
       <div class="twoCol">
         <div class="panel">
           <h3>Ashbik Technology Pvt. Ltd.</h3>
-          <p class="muted">Data & Product Analyst • Bangalore, India • Jan 2023 – Jan 2024</p>
+          <p class="muted">Data & Product Analyst • Jan 2023 – Jan 2024</p>
           <ul>
-            <li>Analyzed large-scale user and product data to identify trends while maintaining data quality.</li>
-            <li>Built Python automation pipelines for data processing and analytics-ready datasets.</li>
-            <li>Defined KPIs and built curated datasets and dashboards to support business decisions.</li>
-            <li>Collaborated with cross-functional teams to translate business needs into analytics solutions.</li>
+            <li>Analyzed large user/product data to identify trends and performance drivers.</li>
+            <li>Built Python automation for data processing and analytics-ready datasets.</li>
+            <li>Defined KPIs and built curated datasets + dashboards for stakeholders.</li>
+            <li>Translated business questions into measurable analytics deliverables.</li>
           </ul>
         </div>
 
         <div class="panel">
           <h3>National Small Industries Corporation (NSIC)</h3>
-          <p class="muted">Machine Learning Intern (IoT & Time-Series) • Hyderabad, India • Sep 2022 – Dec 2022</p>
+          <p class="muted">Machine Learning Intern (IoT & Time-Series) • Sep 2022 – Dec 2022</p>
           <ul>
-            <li>Analyzed real-time IoT sensor data for anomaly detection and monitoring.</li>
+            <li>Analyzed IoT sensor data for anomaly detection and monitoring signals.</li>
             <li>Built Python pipelines for cleaning and processing streaming data.</li>
             <li>Supported predictive maintenance analysis using time-series data.</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="pageFooter">
+        <div class="pfRow">
+          <span class="muted">Email:</span> <a href="mailto:swathicac1@gmail.com">swathicac1@gmail.com</a>
+          <span class="sep">•</span>
+          <span class="muted">LinkedIn:</span> <a href="https://linkedin.com/in/swathi-pokuri-b841b269" target="_blank" rel="noreferrer">linkedin.com/in/swathi-pokuri</a>
+          <span class="sep">•</span>
+          <span class="muted">GitHub:</span> <a href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">github.com/Spokuri2003</a>
         </div>
       </div>
     </section>
@@ -173,12 +194,12 @@
     <section id="projects" class="section page" aria-label="Projects">
       <div class="sectionHead">
         <h2>Projects</h2>
-        <p class="muted">Flagship projects aligned with the resume.</p>
+        <p class="muted">Selected projects aligned to your resume focus.</p>
       </div>
 
       <div class="rowTitle">Featured</div>
       <div class="row">
-        <a class="card" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
+        <a class="card" href="./Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
           <div class="cardTop">
             <div class="tag">GenAI</div>
             <div class="badge">Evaluation + RAG</div>
@@ -188,7 +209,7 @@
           <div class="meta">Python • LLM Eval • RAG • Vector DB</div>
         </a>
 
-        <a class="card" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
+        <a class="card" href="./Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
           <div class="cardTop">
             <div class="tag">Decision Science</div>
             <div class="badge">Causal</div>
@@ -204,9 +225,19 @@
             <div class="badge">Repos</div>
           </div>
           <h3>More Projects on GitHub</h3>
-          <p>Explore additional work including time-series, ML, analytics dashboards, and experiments.</p>
+          <p>Time-series, ML, analytics dashboards, and experiments.</p>
           <div class="meta">github.com/Spokuri2003</div>
         </a>
+      </div>
+
+      <div class="pageFooter">
+        <div class="pfRow">
+          <span class="muted">Email:</span> <a href="mailto:swathicac1@gmail.com">swathicac1@gmail.com</a>
+          <span class="sep">•</span>
+          <span class="muted">LinkedIn:</span> <a href="https://linkedin.com/in/swathi-pokuri-b841b269" target="_blank" rel="noreferrer">linkedin.com/in/swathi-pokuri</a>
+          <span class="sep">•</span>
+          <span class="muted">GitHub:</span> <a href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">github.com/Spokuri2003</a>
+        </div>
       </div>
     </section>
 
@@ -214,24 +245,34 @@
     <section id="education" class="section page" aria-label="Education">
       <div class="sectionHead">
         <h2>Education</h2>
-        <p class="muted">Academic foundation in time-series, stats, and ML.</p>
+        <p class="muted">Strong foundation in statistics, time-series, and ML.</p>
       </div>
 
       <div class="twoCol">
         <div class="panel">
           <h3>Stevens Institute of Technology</h3>
-          <p class="muted">M.S. Data Science • Hoboken, NJ • Sep 2024 – Dec 2025</p>
+          <p class="muted">M.S. Data Science • Sep 2024 – Dec 2025 • Hoboken, NJ</p>
           <ul>
-            <li>Coursework: Optimization, Time Series, Statistical Modeling, ML, Deep Learning, Generative AI</li>
+            <li>Optimization, Time Series, Statistical Modeling, ML, Deep Learning, Generative AI</li>
           </ul>
         </div>
 
         <div class="panel">
           <h3>Chaitanya Bharathi Institute of Technology</h3>
-          <p class="muted">B.E. ECE • Hyderabad, India • Sep 2020 – Aug 2024</p>
+          <p class="muted">B.E. ECE • Sep 2020 – Aug 2024 • Hyderabad, India</p>
           <ul>
-            <li>Coursework: Probability, Signals & Systems, DSP, Data Structures, Networks, Databases, ML Fundamentals</li>
+            <li>Probability, Signals & Systems, DSP, Data Structures, Networks, Databases, ML Fundamentals</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="pageFooter">
+        <div class="pfRow">
+          <span class="muted">Email:</span> <a href="mailto:swathicac1@gmail.com">swathicac1@gmail.com</a>
+          <span class="sep">•</span>
+          <span class="muted">LinkedIn:</span> <a href="https://linkedin.com/in/swathi-pokuri-b841b269" target="_blank" rel="noreferrer">linkedin.com/in/swathi-pokuri</a>
+          <span class="sep">•</span>
+          <span class="muted">GitHub:</span> <a href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">github.com/Spokuri2003</a>
         </div>
       </div>
     </section>
@@ -240,13 +281,13 @@
     <section id="skills" class="section page" aria-label="Skills">
       <div class="sectionHead">
         <h2>Skills</h2>
-        <p class="muted">ATS-aligned skills grouped like the resume.</p>
+        <p class="muted">ATS-friendly skill groups.</p>
       </div>
 
       <div class="chips">
         <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">C++</span>
-        <span class="chip">EDA</span><span class="chip">Data Validation</span><span class="chip">KPI Development</span>
-        <span class="chip">Statistical Analysis</span><span class="chip">Data Governance</span><span class="chip">Documentation</span><span class="chip">Lineage</span>
+        <span class="chip">EDA</span><span class="chip">Data Validation</span><span class="chip">KPI</span>
+        <span class="chip">Documentation</span><span class="chip">Data Governance</span><span class="chip">Lineage</span>
         <span class="chip">Forecasting</span><span class="chip">Anomaly Detection</span><span class="chip">Causal Inference</span>
         <span class="chip">Power BI</span><span class="chip">Spark</span><span class="chip">AWS (S3)</span><span class="chip">Snowflake</span><span class="chip">Databricks</span>
       </div>
@@ -256,21 +297,30 @@
           <h3>Core</h3>
           <ul>
             <li><b>Programming:</b> Python, SQL, R, C++</li>
-            <li><b>Data Analysis:</b> Data Cleaning, Data Validation, EDA, KPI Development, Statistical Analysis</li>
+            <li><b>Data Analysis:</b> Data Cleaning, Validation, EDA, KPI Development, Statistical Analysis</li>
             <li><b>ML:</b> Regression, Classification, Clustering, Forecasting, Predictive Modeling, Causal Inference</li>
-            <li><b>Time-Series:</b> Multivariate TS, Forecasting, RUL Estimation, Predictive Maintenance</li>
+            <li><b>Time-Series:</b> Multivariate TS, Forecasting, RUL, Predictive Maintenance</li>
           </ul>
         </div>
-
         <div class="panel">
           <h3>Build & Deliver</h3>
           <ul>
             <li><b>Deep Learning:</b> NN, RNNs, LSTMs, CNNs, Transformers</li>
-            <li><b>GenAI:</b> LLM Evaluation, Prompt Engineering, RAG, Vector DB</li>
-            <li><b>MLOps:</b> Docker, Kubernetes, Model Monitoring, Data Drift Detection</li>
-            <li><b>Data Engineering:</b> ETL, Spark, Data Processing</li>
-            <li><b>BI:</b> Power BI, Streamlit, Dashboard Development</li>
+            <li><b>GenAI:</b> LLM Evaluation, Prompting, RAG, Vector DB</li>
+            <li><b>MLOps:</b> Docker, Kubernetes, Monitoring, Drift</li>
+            <li><b>Data Eng:</b> ETL, Spark, Data Processing</li>
+            <li><b>BI:</b> Power BI, Streamlit, Dashboards</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="pageFooter">
+        <div class="pfRow">
+          <span class="muted">Email:</span> <a href="mailto:swathicac1@gmail.com">swathicac1@gmail.com</a>
+          <span class="sep">•</span>
+          <span class="muted">LinkedIn:</span> <a href="https://linkedin.com/in/swathi-pokuri-b841b269" target="_blank" rel="noreferrer">linkedin.com/in/swathi-pokuri</a>
+          <span class="sep">•</span>
+          <span class="muted">GitHub:</span> <a href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">github.com/Spokuri2003</a>
         </div>
       </div>
     </section>
@@ -279,7 +329,7 @@
     <section id="about" class="section page" aria-label="About">
       <div class="sectionHead">
         <h2>About</h2>
-        <p class="muted">Cinematic, calm, and recruiter-friendly.</p>
+        <p class="muted">Clean. Cinematic. Recruiter-friendly.</p>
       </div>
 
       <div class="panel">
@@ -291,49 +341,58 @@
           My approach: define metrics → validate data → build analytics-ready datasets → deliver insights → document assumptions for reuse.
         </p>
       </div>
+
+      <div class="pageFooter">
+        <div class="pfRow">
+          <span class="muted">Email:</span> <a href="mailto:swathicac1@gmail.com">swathicac1@gmail.com</a>
+          <span class="sep">•</span>
+          <span class="muted">LinkedIn:</span> <a href="https://linkedin.com/in/swathi-pokuri-b841b269" target="_blank" rel="noreferrer">linkedin.com/in/swathi-pokuri</a>
+          <span class="sep">•</span>
+          <span class="muted">GitHub:</span> <a href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">github.com/Spokuri2003</a>
+        </div>
+      </div>
     </section>
 
     <!-- ===================== CONTACT ===================== -->
     <section id="contact" class="section page" aria-label="Contact">
       <div class="sectionHead">
         <h2>Contact</h2>
-        <p class="muted">One click to reach me.</p>
+        <p class="muted">Send a message — it opens an email draft with everything filled.</p>
       </div>
 
-      <div class="contactGrid">
-        <!-- ✅ Direct email -->
-        <a class="contactCard"
-           href="mailto:swathicac1@gmail.com?subject=Portfolio%20Inquiry%20-%20Swathi%20Pokuri&body=Hi%20Swathi%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect.%0A%0AName%3A%0ACompany%3A%0ARole%3A%0A%0AThanks%2C">
-          <div class="icon">✉️</div>
-          <div>
-            <div class="contactTitle">Email me</div>
-            <div class="muted">swathicac1@gmail.com</div>
-          </div>
-        </a>
+      <div class="panel">
+        <form id="contactForm" class="contactForm">
+          <label>
+            Your name
+            <input id="cName" type="text" placeholder="John Recruiter" required />
+          </label>
 
-        <a class="contactCard" href="https://linkedin.com/in/swathi-pokuri-b841b269" target="_blank" rel="noreferrer">
-          <div class="icon">🔗</div>
-          <div>
-            <div class="contactTitle">LinkedIn</div>
-            <div class="muted">Message me directly</div>
-          </div>
-        </a>
+          <label>
+            Your email
+            <input id="cEmail" type="email" placeholder="john@company.com" required />
+          </label>
 
-        <a class="contactCard" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
-          <div class="icon">📄</div>
-          <div>
-            <div class="contactTitle">Resume</div>
-            <div class="muted">Open PDF</div>
-          </div>
-        </a>
+          <label>
+            Message
+            <textarea id="cMsg" rows="6" placeholder="Hi Swathi, we’d like to connect about..." required></textarea>
+          </label>
 
-        <a class="contactCard" href="#home" data-page="home">
-          <div class="icon">🏠</div>
-          <div>
-            <div class="contactTitle">Home</div>
-            <div class="muted">Back to start</div>
-          </div>
-        </a>
+          <button class="btn primary" type="submit">Send message</button>
+
+          <p class="muted small">
+            This uses your default mail app (Gmail/Outlook). Message goes to <b>swathicac1@gmail.com</b>.
+          </p>
+        </form>
+      </div>
+
+      <div class="pageFooter">
+        <div class="pfRow">
+          <span class="muted">Email:</span> <a href="mailto:swathicac1@gmail.com">swathicac1@gmail.com</a>
+          <span class="sep">•</span>
+          <span class="muted">LinkedIn:</span> <a href="https://linkedin.com/in/swathi-pokuri-b841b269" target="_blank" rel="noreferrer">linkedin.com/in/swathi-pokuri</a>
+          <span class="sep">•</span>
+          <span class="muted">GitHub:</span> <a href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">github.com/Spokuri2003</a>
+        </div>
       </div>
     </section>
 
@@ -344,7 +403,6 @@
     </footer>
   </main>
 
-  <!-- IMPORTANT: script at end so DOM exists -->
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
-</html> 
+</html>
