@@ -8,10 +8,11 @@
 </head>
 
 <body>
-  <!-- HERO = Home page -->
+  <!-- HOME / HERO PAGE -->
   <header class="hero page active" id="home" aria-label="Home">
     <canvas id="stars" aria-hidden="true"></canvas>
 
+    <!-- Warm glow blobs -->
     <div class="glow g1" aria-hidden="true"></div>
     <div class="glow g2" aria-hidden="true"></div>
     <div class="glow g3" aria-hidden="true"></div>
@@ -20,6 +21,7 @@
       <a class="brand" href="#home" data-page="home" aria-label="Home">SP</a>
 
       <div class="navLinks">
+        <a href="#timeline" data-page="timeline">Timeline</a>
         <a href="#experience" data-page="experience">Experience</a>
         <a href="#projects" data-page="projects">Projects</a>
         <a href="#education" data-page="education">Education</a>
@@ -35,13 +37,15 @@
     </nav>
 
     <div class="heroInner">
-      <!-- ✅ Name on front page -->
       <p class="kicker">Data Science • Analytics • Time Series • SQL • Governance</p>
+
+      <!-- ✅ Name on front page -->
       <h1 class="headline">
         <span class="nameFront">Swathi Pokuri</span><br/>
         Turn messy data<br/>
         into trusted decisions.
       </h1>
+
       <p class="subhead">
         I build analytics-ready datasets, KPI systems, forecasting/ML workflows, and dashboards —
         with strong data quality, documentation, and stakeholder clarity.
@@ -56,14 +60,63 @@
     <div class="grain" aria-hidden="true"></div>
   </header>
 
-  <!-- PAGES WRAPPER -->
   <main class="wrap">
 
-    <!-- EXPERIENCE -->
+    <!-- ===================== TIMELINE ===================== -->
+    <section id="timeline" class="section page" aria-label="Timeline">
+      <div class="sectionHead">
+        <h2>Timeline</h2>
+        <p class="muted">A quick year-by-year snapshot.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tItem">
+          <div class="tDot" aria-hidden="true"></div>
+          <div class="tCard">
+            <div class="tTop"><span class="tYear">2025</span><span class="tTag">Research</span></div>
+            <h3 class="tTitle">Research Assistant — Time-Series Analysis</h3>
+            <p class="tMeta muted">Stevens Institute of Technology • Hoboken, NJ • Jan 2025 – Dec 2025</p>
+            <p class="tDesc">Forecasting research, dataset validation, reproducible workflows, and documentation.</p>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot" aria-hidden="true"></div>
+          <div class="tCard">
+            <div class="tTop"><span class="tYear">2024</span><span class="tTag">Work</span></div>
+            <h3 class="tTitle">Data Analyst Intern (BI & Analytics)</h3>
+            <p class="tMeta muted">Datum Cybertech (Alithya Partner) • Hyderabad, India • Feb 2024 – May 2024</p>
+            <p class="tDesc">SQL KPI systems + Power BI dashboards, DAX models, data quality checks (100k+ records).</p>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot" aria-hidden="true"></div>
+          <div class="tCard">
+            <div class="tTop"><span class="tYear">2023</span><span class="tTag">Work</span></div>
+            <h3 class="tTitle">Data & Product Analyst</h3>
+            <p class="tMeta muted">Ashbik Technology • Bangalore, India • Jan 2023 – Jan 2024</p>
+            <p class="tDesc">Analytics-ready datasets, KPI design, dashboards, Python automation, stakeholder alignment.</p>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot" aria-hidden="true"></div>
+          <div class="tCard">
+            <div class="tTop"><span class="tYear">2022</span><span class="tTag">Internship</span></div>
+            <h3 class="tTitle">Machine Learning Intern (IoT & Time-Series)</h3>
+            <p class="tMeta muted">NSIC • Hyderabad, India • Sep 2022 – Dec 2022</p>
+            <p class="tDesc">IoT pipelines, anomaly detection, monitoring, predictive maintenance support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
     <section id="experience" class="section page" aria-label="Experience">
       <div class="sectionHead">
         <h2>Work Experience</h2>
-        <p class="muted">Analytics delivery, data quality, and time-series/ML systems.</p>
+        <p class="muted">Roles focused on analytics delivery, data quality, and time-series/ML systems.</p>
       </div>
 
       <div class="twoCol">
@@ -116,7 +169,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- ===================== PROJECTS ===================== -->
     <section id="projects" class="section page" aria-label="Projects">
       <div class="sectionHead">
         <h2>Projects</h2>
@@ -125,7 +178,7 @@
 
       <div class="rowTitle">Featured</div>
       <div class="row">
-        <a class="card" href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">
+        <a class="card" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
           <div class="cardTop">
             <div class="tag">GenAI</div>
             <div class="badge">Evaluation + RAG</div>
@@ -135,7 +188,7 @@
           <div class="meta">Python • LLM Eval • RAG • Vector DB</div>
         </a>
 
-        <a class="card" href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">
+        <a class="card" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
           <div class="cardTop">
             <div class="tag">Decision Science</div>
             <div class="badge">Causal</div>
@@ -145,19 +198,19 @@
           <div class="meta">Python • Stats • Uplift • Inference</div>
         </a>
 
-        <a class="card" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
+        <a class="card" href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">
           <div class="cardTop">
-            <div class="tag">Resume</div>
-            <div class="badge">PDF</div>
+            <div class="tag">GitHub</div>
+            <div class="badge">Repos</div>
           </div>
-          <h3>Full Details</h3>
-          <p>Open the one-page ATS-ready PDF for complete bullets and scope.</p>
-          <div class="meta">Resume • One-page • ATS-ready</div>
+          <h3>More Projects on GitHub</h3>
+          <p>Explore additional work including time-series, ML, analytics dashboards, and experiments.</p>
+          <div class="meta">github.com/Spokuri2003</div>
         </a>
       </div>
     </section>
 
-    <!-- EDUCATION -->
+    <!-- ===================== EDUCATION ===================== -->
     <section id="education" class="section page" aria-label="Education">
       <div class="sectionHead">
         <h2>Education</h2>
@@ -183,7 +236,7 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- ===================== SKILLS ===================== -->
     <section id="skills" class="section page" aria-label="Skills">
       <div class="sectionHead">
         <h2>Skills</h2>
@@ -222,7 +275,7 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ===================== ABOUT ===================== -->
     <section id="about" class="section page" aria-label="About">
       <div class="sectionHead">
         <h2>About</h2>
@@ -240,7 +293,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ===================== CONTACT ===================== -->
     <section id="contact" class="section page" aria-label="Contact">
       <div class="sectionHead">
         <h2>Contact</h2>
@@ -248,7 +301,9 @@
       </div>
 
       <div class="contactGrid">
-        <a class="contactCard" href="mailto:swathicac1@gmail.com?subject=Portfolio%20Inquiry%20-%20Swathi%20Pokuri&body=Hi%20Swathi%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect.%0A%0A-%20Name%3A%0A-%20Company%3A%0A-%20Role%3A%0A%0AThanks%2C">
+        <!-- ✅ Direct email -->
+        <a class="contactCard"
+           href="mailto:swathicac1@gmail.com?subject=Portfolio%20Inquiry%20-%20Swathi%20Pokuri&body=Hi%20Swathi%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect.%0A%0AName%3A%0ACompany%3A%0ARole%3A%0A%0AThanks%2C">
           <div class="icon">✉️</div>
           <div>
             <div class="contactTitle">Email me</div>
@@ -289,6 +344,7 @@
     </footer>
   </main>
 
+  <!-- IMPORTANT: script at end so DOM exists -->
   <script src="script.js"></script>
 </body>
 </html>
