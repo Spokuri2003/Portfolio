@@ -8,7 +8,8 @@
 </head>
 
 <body>
-  <header class="hero" id="top">
+  <!-- HERO = Home page -->
+  <header class="hero page active" id="home" aria-label="Home">
     <canvas id="stars" aria-hidden="true"></canvas>
 
     <div class="glow g1" aria-hidden="true"></div>
@@ -16,26 +17,28 @@
     <div class="glow g3" aria-hidden="true"></div>
 
     <nav class="nav">
-      <a class="brand" href="#top">SP</a>
+      <a class="brand" href="#home" data-page="home" aria-label="Home">SP</a>
 
       <div class="navLinks">
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#experience" data-page="experience">Experience</a>
+        <a href="#projects" data-page="projects">Projects</a>
+        <a href="#education" data-page="education">Education</a>
+        <a href="#skills" data-page="skills">Skills</a>
+        <a href="#about" data-page="about">About</a>
+        <a href="#contact" data-page="contact">Contact</a>
       </div>
 
       <div class="navCtas">
         <a class="btn ghost" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">Resume</a>
-        <a class="btn primary" href="#experience">Enter</a>
+        <a class="btn primary" href="#projects" data-page="projects">Enter</a>
       </div>
     </nav>
 
     <div class="heroInner">
+      <!-- ✅ Name on front page -->
       <p class="kicker">Data Science • Analytics • Time Series • SQL • Governance</p>
       <h1 class="headline">
+        <span class="nameFront">Swathi Pokuri</span><br/>
         Turn messy data<br/>
         into trusted decisions.
       </h1>
@@ -45,23 +48,22 @@
       </p>
 
       <div class="heroBtns">
-        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn primary" href="#projects" data-page="projects">View Projects</a>
         <a class="btn ghost" href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">GitHub</a>
       </div>
-
-      <div class="scrollHint">Scroll ↓</div>
     </div>
 
     <div class="grain" aria-hidden="true"></div>
   </header>
 
+  <!-- PAGES WRAPPER -->
   <main class="wrap">
 
-    <!-- ===================== EXPERIENCE (WORK) ===================== -->
-    <section id="experience" class="section reveal">
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section page" aria-label="Experience">
       <div class="sectionHead">
         <h2>Work Experience</h2>
-        <p class="muted">Roles focused on analytics delivery, data quality, and time-series/ML systems.</p>
+        <p class="muted">Analytics delivery, data quality, and time-series/ML systems.</p>
       </div>
 
       <div class="twoCol">
@@ -114,11 +116,11 @@
       </div>
     </section>
 
-    <!-- ===================== PROJECTS ===================== -->
-    <section id="projects" class="section reveal">
+    <!-- PROJECTS -->
+    <section id="projects" class="section page" aria-label="Projects">
       <div class="sectionHead">
         <h2>Projects</h2>
-        <p class="muted">Flagship projects aligned with the resume — evaluation, decision science, and real workflows.</p>
+        <p class="muted">Flagship projects aligned with the resume.</p>
       </div>
 
       <div class="rowTitle">Featured</div>
@@ -128,8 +130,8 @@
             <div class="tag">GenAI</div>
             <div class="badge">Evaluation + RAG</div>
           </div>
-          <h3>LLM Evaluation & Retrieval-Augmented Generation (RAG)</h3>
-          <p>Evaluation framework for accuracy, latency, cost, and hallucination risk + RAG over enterprise data.</p>
+          <h3>LLM Evaluation & RAG System</h3>
+          <p>Evaluation for accuracy, latency, cost, hallucination risk + RAG over enterprise-style data.</p>
           <div class="meta">Python • LLM Eval • RAG • Vector DB</div>
         </a>
 
@@ -139,7 +141,7 @@
             <div class="badge">Causal</div>
           </div>
           <h3>Causal Impact & Uplift Modeling</h3>
-          <p>Counterfactual modeling to estimate intervention effects and quantify uncertainty for decisions.</p>
+          <p>Counterfactual modeling to estimate intervention effects and quantify uncertainty.</p>
           <div class="meta">Python • Stats • Uplift • Inference</div>
         </a>
 
@@ -148,32 +150,32 @@
             <div class="tag">Resume</div>
             <div class="badge">PDF</div>
           </div>
-          <h3>Full Project Details</h3>
-          <p>For full scope, methods, and bullets, open the ATS-ready one-page resume PDF.</p>
+          <h3>Full Details</h3>
+          <p>Open the one-page ATS-ready PDF for complete bullets and scope.</p>
           <div class="meta">Resume • One-page • ATS-ready</div>
         </a>
       </div>
     </section>
 
-    <!-- ===================== EDUCATION ===================== -->
-    <section id="education" class="section reveal">
+    <!-- EDUCATION -->
+    <section id="education" class="section page" aria-label="Education">
       <div class="sectionHead">
         <h2>Education</h2>
-        <p class="muted">Academic foundation with a focus on time-series, statistics, and machine learning.</p>
+        <p class="muted">Academic foundation in time-series, stats, and ML.</p>
       </div>
 
       <div class="twoCol">
         <div class="panel">
           <h3>Stevens Institute of Technology</h3>
-          <p class="muted">M.S. in Data Science • Hoboken, NJ • Sep 2024 – Dec 2025</p>
+          <p class="muted">M.S. Data Science • Hoboken, NJ • Sep 2024 – Dec 2025</p>
           <ul>
-            <li>Coursework: Optimization, Time Series Analysis, Statistical Modeling, Machine Learning, Deep Learning, Generative AI</li>
+            <li>Coursework: Optimization, Time Series, Statistical Modeling, ML, Deep Learning, Generative AI</li>
           </ul>
         </div>
 
         <div class="panel">
           <h3>Chaitanya Bharathi Institute of Technology</h3>
-          <p class="muted">B.E. in Electronics & Communication Engineering • Hyderabad, India • Sep 2020 – Aug 2024</p>
+          <p class="muted">B.E. ECE • Hyderabad, India • Sep 2020 – Aug 2024</p>
           <ul>
             <li>Coursework: Probability, Signals & Systems, DSP, Data Structures, Networks, Databases, ML Fundamentals</li>
           </ul>
@@ -181,33 +183,19 @@
       </div>
     </section>
 
-    <!-- ===================== SKILLS ===================== -->
-    <section id="skills" class="section reveal">
+    <!-- SKILLS -->
+    <section id="skills" class="section page" aria-label="Skills">
       <div class="sectionHead">
         <h2>Skills</h2>
-        <p class="muted">ATS-aligned skills grouped the same way as the resume.</p>
+        <p class="muted">ATS-aligned skills grouped like the resume.</p>
       </div>
 
       <div class="chips">
-        <span class="chip">Python</span>
-        <span class="chip">SQL</span>
-        <span class="chip">R</span>
-        <span class="chip">C++</span>
-        <span class="chip">EDA</span>
-        <span class="chip">Data Validation</span>
-        <span class="chip">KPI Development</span>
-        <span class="chip">Statistical Analysis</span>
-        <span class="chip">Data Governance</span>
-        <span class="chip">Data Documentation</span>
-        <span class="chip">Data Lineage</span>
-        <span class="chip">Forecasting</span>
-        <span class="chip">Anomaly Detection</span>
-        <span class="chip">Causal Inference</span>
-        <span class="chip">Power BI</span>
-        <span class="chip">Apache Spark</span>
-        <span class="chip">AWS (S3)</span>
-        <span class="chip">Snowflake</span>
-        <span class="chip">Databricks</span>
+        <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">C++</span>
+        <span class="chip">EDA</span><span class="chip">Data Validation</span><span class="chip">KPI Development</span>
+        <span class="chip">Statistical Analysis</span><span class="chip">Data Governance</span><span class="chip">Documentation</span><span class="chip">Lineage</span>
+        <span class="chip">Forecasting</span><span class="chip">Anomaly Detection</span><span class="chip">Causal Inference</span>
+        <span class="chip">Power BI</span><span class="chip">Spark</span><span class="chip">AWS (S3)</span><span class="chip">Snowflake</span><span class="chip">Databricks</span>
       </div>
 
       <div class="twoCol">
@@ -216,26 +204,26 @@
           <ul>
             <li><b>Programming:</b> Python, SQL, R, C++</li>
             <li><b>Data Analysis:</b> Data Cleaning, Data Validation, EDA, KPI Development, Statistical Analysis</li>
-            <li><b>Machine Learning:</b> Regression, Classification, Clustering, Forecasting, Predictive Modeling, Causal Inference</li>
-            <li><b>Time-Series:</b> Multivariate Time-Series, Forecasting, RUL Estimation, Predictive Maintenance</li>
+            <li><b>ML:</b> Regression, Classification, Clustering, Forecasting, Predictive Modeling, Causal Inference</li>
+            <li><b>Time-Series:</b> Multivariate TS, Forecasting, RUL Estimation, Predictive Maintenance</li>
           </ul>
         </div>
 
         <div class="panel">
           <h3>Build & Deliver</h3>
           <ul>
-            <li><b>Deep Learning:</b> Neural Networks, RNNs, LSTMs, CNNs, Transformers</li>
-            <li><b>GenAI/LLMs:</b> LLM Evaluation, Prompt Engineering, RAG, Vector Databases</li>
+            <li><b>Deep Learning:</b> NN, RNNs, LSTMs, CNNs, Transformers</li>
+            <li><b>GenAI:</b> LLM Evaluation, Prompt Engineering, RAG, Vector DB</li>
             <li><b>MLOps:</b> Docker, Kubernetes, Model Monitoring, Data Drift Detection</li>
-            <li><b>Data Engineering:</b> ETL Pipelines, Apache Spark, Data Processing</li>
+            <li><b>Data Engineering:</b> ETL, Spark, Data Processing</li>
             <li><b>BI:</b> Power BI, Streamlit, Dashboard Development</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ===================== ABOUT ===================== -->
-    <section id="about" class="section reveal">
+    <!-- ABOUT -->
+    <section id="about" class="section page" aria-label="About">
       <div class="sectionHead">
         <h2>About</h2>
         <p class="muted">Cinematic, calm, and recruiter-friendly.</p>
@@ -243,8 +231,8 @@
 
       <div class="panel">
         <p>
-          I’m a Data Science Master’s student (Dec 2025) focused on analytics, forecasting, and ML systems that ship into real workflows.
-          I like problems where data is messy, metrics are unclear, and the final output needs to be trusted and reusable.
+          I’m a Master’s student in Data Science (Dec 2025) focused on analytics, forecasting, and ML systems that ship into real workflows.
+          I like problems where data is messy, metrics are unclear, and the output needs to be trusted and reusable.
         </p>
         <p class="muted">
           My approach: define metrics → validate data → build analytics-ready datasets → deliver insights → document assumptions for reuse.
@@ -252,26 +240,18 @@
       </div>
     </section>
 
-    <!-- ===================== CONTACT ===================== -->
-    <section id="contact" class="section reveal">
+    <!-- CONTACT -->
+    <section id="contact" class="section page" aria-label="Contact">
       <div class="sectionHead">
         <h2>Contact</h2>
-        <p class="muted">Quick links recruiters actually click.</p>
+        <p class="muted">One click to reach me.</p>
       </div>
 
       <div class="contactGrid">
-        <a class="contactCard" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
-          <div class="icon">📄</div>
-          <div>
-            <div class="contactTitle">Resume</div>
-            <div class="muted">Open PDF</div>
-          </div>
-        </a>
-
-        <a class="contactCard" href="mailto:swathicac1@gmail.com">
+        <a class="contactCard" href="mailto:swathicac1@gmail.com?subject=Portfolio%20Inquiry%20-%20Swathi%20Pokuri&body=Hi%20Swathi%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect.%0A%0A-%20Name%3A%0A-%20Company%3A%0A-%20Role%3A%0A%0AThanks%2C">
           <div class="icon">✉️</div>
           <div>
-            <div class="contactTitle">Email</div>
+            <div class="contactTitle">Email me</div>
             <div class="muted">swathicac1@gmail.com</div>
           </div>
         </a>
@@ -280,15 +260,23 @@
           <div class="icon">🔗</div>
           <div>
             <div class="contactTitle">LinkedIn</div>
-            <div class="muted">/in/swathi-pokuri</div>
+            <div class="muted">Message me directly</div>
           </div>
         </a>
 
-        <a class="contactCard" href="https://github.com/Spokuri2003" target="_blank" rel="noreferrer">
-          <div class="icon">💻</div>
+        <a class="contactCard" href="Swathi_Pokuri_LTJH_pdf.pdf" target="_blank" rel="noreferrer">
+          <div class="icon">📄</div>
           <div>
-            <div class="contactTitle">GitHub</div>
-            <div class="muted">@Spokuri2003</div>
+            <div class="contactTitle">Resume</div>
+            <div class="muted">Open PDF</div>
+          </div>
+        </a>
+
+        <a class="contactCard" href="#home" data-page="home">
+          <div class="icon">🏠</div>
+          <div>
+            <div class="contactTitle">Home</div>
+            <div class="muted">Back to start</div>
           </div>
         </a>
       </div>
