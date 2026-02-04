@@ -3,30 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ===== OPTIONAL: Stars animation can go here =====
-  // Paste your canvas stars code here if you have it.
-
-  // Pages router
   const pages = Array.from(document.querySelectorAll(".page"));
   const navLinks = Array.from(document.querySelectorAll("[data-page]"));
+  const app = document.querySelector(".app");
 
   function showPage(id) {
     pages.forEach(p => p.classList.remove("active"));
     const target = document.getElementById(id);
     if (target) target.classList.add("active");
 
-    // Always start each page at top
-    window.scrollTo(0, 0);
+    // Scroll INSIDE the app container back to top
+    if (app) app.scrollTop = 0;
 
-    // Keep URL hash
+    // Update hash
     if (location.hash !== `#${id}`) {
       history.pushState(null, "", `#${id}`);
-    }
-
-    // Accessibility focus
-    if (target) {
-      target.setAttribute("tabindex", "-1");
-      try { target.focus({ preventScroll: true }); } catch (e) {}
     }
   }
 
@@ -35,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return document.getElementById(hash) ? hash : "home";
   }
 
-  // Click nav without normal scrolling
+  // Click nav links
   navLinks.forEach(a => {
     a.addEventListener("click", (e) => {
       const page = a.getAttribute("data-page");
@@ -45,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Back/forward support
+  // Back/forward
   window.addEventListener("popstate", () => {
     showPage(getInitialPage());
   });
@@ -59,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = (document.getElementById("cEmail")?.value || "").trim();
     const msg = (document.getElementById("cMsg")?.value || "").trim();
 
-    const subject = encodeURIComponent(`Portfolio Inquiry — ${name || "Recruiter"}`);
+    const subject = encodeURIComponent(`Portfolio Message — ${name || "Visitor"}`);
     const body = encodeURIComponent(
       `Hi Swathi,\n\n${msg}\n\n— ${name}\n${email}`
     );
