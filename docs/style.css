@@ -9,6 +9,9 @@
   --radius: 18px;
   --navH: 68px;
 }
+html, body { scroll-behavior: auto; }
+.app { scroll-behavior: auto; scroll-padding-top: 0; }
+
 
 *{ box-sizing: border-box; }
 html, body{ height: 100%; }
