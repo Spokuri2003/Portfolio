@@ -9,19 +9,18 @@
   --radius: 18px;
   --navH: 68px;
 }
+
 html, body { scroll-behavior: auto; }
-.app { scroll-behavior: auto; scroll-padding-top: 0; }
-
-
 *{ box-sizing: border-box; }
 html, body{ height: 100%; }
+
 body{
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.55;
-  overflow: hidden; /* IMPORTANT: no body scroll */
+  overflow: hidden;
 }
 
 a{ color: var(--accent); text-decoration: none; }
@@ -29,14 +28,10 @@ a:hover{ text-decoration: underline; }
 .muted{ color: var(--muted); }
 .sep{ margin: 0 8px; opacity: 0.55; }
 
-/* =========================
-   FIXED TOP NAV (always)
-   ========================= */
+/* Top nav */
 .topNav{
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: var(--navH);
   display:flex;
   align-items:center;
@@ -89,6 +84,7 @@ a:hover{ text-decoration: underline; }
   transition: transform .15s ease, background .15s ease, border-color .15s ease;
 }
 .btn:hover{ transform: translateY(-1px); text-decoration:none; }
+
 .btn.primary{
   background: rgba(139,211,255,0.16);
   border-color: rgba(139,211,255,0.40);
@@ -106,27 +102,26 @@ a:hover{ text-decoration: underline; }
   background: rgba(255,255,255,0.06);
 }
 
-/* =========================
-   APP CONTENT (scroll inside)
-   ========================= */
+/* Scroll container */
 .app{
   position: fixed;
   top: var(--navH);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto; /* ONLY THIS scrolls */
+  left: 0; right: 0; bottom: 0;
+  overflow: auto;
   padding: 28px 0 48px;
+  scroll-behavior: auto;
+  scroll-padding-top: 0;
 }
+
+/* Pages */
+.page{ display:none; }
+.page.active{ display:block; }
 
 .section{
   width: min(1040px, calc(100% - 40px));
   margin: 0 auto;
   padding: 10px 0 40px;
 }
-
-.page{ display:none; }
-.page.active{ display:block; }
 
 .sectionHead h2{
   margin: 0 0 6px;
@@ -135,9 +130,7 @@ a:hover{ text-decoration: underline; }
 }
 .sectionHead p{ margin: 0 0 18px; }
 
-/* =========================
-   HERO PAGE
-   ========================= */
+/* Hero */
 .hero{
   width: 100%;
   min-height: calc(100vh - var(--navH));
@@ -206,7 +199,6 @@ a:hover{ text-decoration: underline; }
   margin: 0 0 16px;
   color: var(--muted);
   font-size: 16px;
-  max-width: 70ch;
 }
 
 .homeLinks{
@@ -234,15 +226,12 @@ a:hover{ text-decoration: underline; }
 
 .hint{ margin-top: 14px; font-size: 13px; }
 
-/* =========================
-   GRID / PANELS
-   ========================= */
+/* Panels */
 .grid2{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
-
 .panel{
   border: 1px solid var(--line);
   background: var(--card);
@@ -254,15 +243,12 @@ a:hover{ text-decoration: underline; }
 .panel ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
 .panel li{ margin: 6px 0; }
 
-/* =========================
-   PROJECT CARDS
-   ========================= */
+/* Cards */
 .row{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
-
 .card{
   display:block;
   border: 1px solid var(--line);
@@ -305,9 +291,7 @@ a:hover{ text-decoration: underline; }
 .card p{ margin: 0 0 10px; color: var(--muted); }
 .meta{ font-size: 12px; color: rgba(232,236,244,0.68); }
 
-/* =========================
-   CONTACT FORM (better)
-   ========================= */
+/* Contact form */
 .contactForm{ display:grid; gap: 12px; }
 .formRow{
   display:grid;
@@ -336,45 +320,64 @@ a:hover{ text-decoration: underline; }
 }
 .small{ font-size: 12px; }
 
-/* =========================
-   TIMELINE
-   ========================= */
-.timeline{
+/* ===== TIMELINE SPLIT (EDU LEFT / EXP RIGHT) ===== */
+.timelineSplit{
   position: relative;
-  margin-top: 18px;
-  padding-left: 18px;
+  margin-top: 26px;
+  padding: 6px 0;
 }
-.timeline::before{
+.timelineSplit::before{
   content:"";
   position:absolute;
-  left: 7px;
-  top: 6px;
-  bottom: 6px;
+  left: 50%;
+  top: 0;
+  bottom: 0;
   width: 2px;
   background: rgba(255,255,255,0.12);
+  transform: translateX(-50%);
 }
 .tItem{
-  display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: 14px;
-  padding: 14px 0;
+  position: relative;
+  width: 50%;
+  padding: 18px 26px;
+}
+.tItem.left{
+  left: 0;
+  text-align: right;
+}
+.tItem.right{
+  left: 50%;
+  text-align: left;
 }
 .tDot{
+  position:absolute;
+  top: 28px;
   width: 14px;
   height: 14px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.18);
-  box-shadow: 0 0 0 6px rgba(255,255,255,0.06);
-  margin-top: 10px;
+  background: rgba(139,211,255,0.90);
+  box-shadow: 0 0 0 6px rgba(139,211,255,0.14);
 }
+.tItem.left .tDot{ right: -7px; }
+.tItem.right .tDot{ left: -7px; }
+
 .tCard{
+  display:inline-block;
+  max-width: 460px;
   border: 1px solid rgba(255,255,255,0.10);
   background: rgba(255,255,255,0.04);
   border-radius: 16px;
   padding: 14px 16px;
   backdrop-filter: blur(10px);
 }
-.tTop{ display:flex; align-items:center; gap:10px; margin-bottom: 6px; }
+.tTop{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 6px;
+  justify-content: flex-start;
+}
+.tItem.left .tTop{ justify-content: flex-end; }
 .tYear{ font-weight: 700; letter-spacing: 0.02em; }
 .tTag{
   font-size: 12px;
@@ -385,11 +388,62 @@ a:hover{ text-decoration: underline; }
 }
 .tTitle{ margin: 0; font-size: 16px; line-height: 1.25; }
 .tMeta{ margin: 6px 0 0 0; font-size: 13px; }
-.tDesc{ margin: 10px 0 0 0; font-size: 14px; line-height: 1.5; }
+.tDesc{ margin: 10px 0 0 0; font-size: 14px; line-height: 1.5; color: rgba(232,236,244,0.74); }
 
-/* =========================
-   PAGE FOOTER CONTACT STRIP
-   ========================= */
+/* Mobile timeline fallback */
+@media (max-width: 900px){
+  .timelineSplit::before{
+    left: 18px;
+    transform: none;
+  }
+  .tItem{
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+    padding-left: 44px;
+    padding-right: 0;
+  }
+  .tItem .tDot{
+    left: 11px !important;
+    right: auto !important;
+  }
+  .tTop{ justify-content: flex-start !important; }
+}
+
+/* ===== SKILLS GRID (BOXED) ===== */
+.skillGrid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.skillCard{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 14px 16px;
+  backdrop-filter: blur(10px);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.skillCard:hover{
+  transform: translateY(-2px);
+  border-color: rgba(139,211,255,0.32);
+  background: rgba(255,255,255,0.06);
+}
+.skillCard h3{
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+.skillCard p{
+  margin: 0;
+  color: rgba(232,236,244,0.74);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* Per-page contact strip */
 .pageFooter{
   margin-top: 22px;
   padding-top: 14px;
@@ -405,9 +459,7 @@ a:hover{ text-decoration: underline; }
   color: var(--muted);
 }
 
-/* =========================
-   GLOBAL FOOTER
-   ========================= */
+/* Footer */
 .footer{
   width: min(1040px, calc(100% - 40px));
   margin: 0 auto;
@@ -423,9 +475,15 @@ a:hover{ text-decoration: underline; }
 }
 .dot{ opacity: 0.4; }
 
+/* Responsive */
 @media (max-width: 980px){
   .row{ grid-template-columns: 1fr; }
   .grid2{ grid-template-columns: 1fr; }
   .formRow{ grid-template-columns: 1fr; }
-  .navLinks{ display:none; } /* simple mobile: hide links */
+}
+@media (max-width: 820px){
+  .skillGrid{ grid-template-columns: 1fr; }
+}
+@media (max-width: 980px){
+  .navLinks{ display:none; } /* (we can add hamburger later) */
 }
