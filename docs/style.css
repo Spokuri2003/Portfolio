@@ -2,18 +2,87 @@
 .page { display: none; }
 .page.active { display: block; }
 
-/* Make each page feel like its own screen */
+/* Safety fallback so site never becomes blank */
+#home { display: block; }
+
 .section.page{
   min-height: calc(100vh - 90px);
   padding-top: 34px;
 }
 
-/* Keep footer visible but not forced */
 .wrap { padding-bottom: 40px; }
 
-/* Name on hero headline */
 .nameFront{
   display: inline-block;
   font-weight: 800;
   letter-spacing: 0.02em;
+}
+
+/* ===== Timeline styles ===== */
+.timeline{
+  position: relative;
+  margin-top: 18px;
+  padding-left: 18px;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: rgba(255,255,255,0.12);
+}
+.tItem{
+  position: relative;
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 14px;
+  padding: 14px 0;
+}
+.tDot{
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.06);
+  margin-top: 10px;
+}
+.tCard{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 14px 16px;
+  backdrop-filter: blur(10px);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.tCard:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+}
+.tTop{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 6px;
+}
+.tYear{ font-weight: 700; letter-spacing: 0.02em; }
+.tTag{
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.18);
+}
+.tTitle{ margin: 0; font-size: 16px; line-height: 1.25; }
+.tMeta{ margin: 6px 0 0 0; font-size: 13px; }
+.tDesc{ margin: 10px 0 0 0; font-size: 14px; line-height: 1.5; }
+
+@media (max-width: 720px){
+  .timeline{ padding-left: 14px; }
+  .timeline::before{ left: 6px; }
+  .tItem{ grid-template-columns: 16px 1fr; gap: 12px; }
+  .tDot{ width: 12px; height: 12px; box-shadow: 0 0 0 5px rgba(255,255,255,0.06); }
+  .tCard{ border-radius: 14px; padding: 12px 14px; }
 }
